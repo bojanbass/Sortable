@@ -34,6 +34,11 @@ module.exports = function (grunt) {
 					'<%= pkg.exportName %>.min.js': ['<%= pkg.exportName %>.js']
 				}
 			},
+			ng: {
+				files: {
+					'ng-sortable.min.js': ['ng-sortable.js']
+				}
+			},
 			jquery: {
 				files: {}
 			}
@@ -99,5 +104,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('meteor', ['meteor-test', 'meteor-publish']);
 
 	grunt.registerTask('tests', ['jshint']);
-	grunt.registerTask('default', ['tests', 'version', 'uglify:dist']);
+	grunt.registerTask('default', ['tests', 'version', 'uglify:dist', 'uglify:ng']);
 };
